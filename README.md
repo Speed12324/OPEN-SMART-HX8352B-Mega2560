@@ -6,6 +6,8 @@ This repository preserves the successful experiment, not a redesigned driver.
 
 [Русская документация](README.ru.md) · [Reproduce](docs/REPRODUCE.md) · [Pinout](docs/PINOUT.md) · [Diagnostics](docs/DIAGNOSTICS.md)
 
+**Clean GitHub-clone rebuild: byte-identical HEX.** [Validation report](docs/VALIDATION.md).
+
 ![Actual working display, cropped webcam photograph](evidence/working-display.jpg)
 
 ## The four essential settings
