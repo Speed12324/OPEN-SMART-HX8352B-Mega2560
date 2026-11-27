@@ -2,7 +2,9 @@
 import hashlib, pathlib, sys
 root = pathlib.Path(__file__).resolve().parents[1]
 bad = []
-manifest = "VENDOR-SHA256SUMS.txt" if "--vendor" in sys.argv else "SHA256SUMS.txt"
+if "--vendor" in sys.argv:
+    sys.exit("Legacy vendor snapshots are not public artifacts. Verify source with this script; install-tools.ps1 verifies official downloads.")
+manifest = "SHA256SUMS.txt"
 for line in (root / "checksums" / manifest).read_text().splitlines():
     digest, relative = line.split("  ", 1)
     p = root / relative

@@ -19,7 +19,7 @@ MCUFRIEND revision:
 `9fa56e527a88cf7e0c458dae99862ba43b213829`.
 Every local packaged source file was compared with that tag after CRLF/LF
 normalization: exactly the three expected macro changes; package omits Git
-metadata and upstream dotfiles. The original library-manager ZIP is preserved.
+metadata and upstream dotfiles. The full configured source is preserved.
 No claim that all package archive bytes equal a GitHub source ZIP is made.
 
 GFX tag commit: `ac6d7c3869a693d406f77b9bfcd486b0673169f0`.
@@ -32,15 +32,17 @@ their complete saved bytes, not a future tag lookup, are authoritative.
 
 The Windows script sets `ARDUINO_DIRECTORIES_DATA`, `USER`, and `DOWNLOADS`
 to project-local paths and passes all three library locations explicitly.
-No user Arduino configuration, credentials or unrelated sketches are archived.
-The environment ZIP contains the Windows CLI, exact installed AVR core/tools,
-CLI built-in discovery/monitor dependencies, and original dependency ZIPs.
-`checksums/VENDOR-SHA256SUMS.txt` covers the extracted vendor files.
-The vendor tree is a release asset, **not** a Git submodule or global installation.
+No user Arduino configuration, credentials or unrelated sketches are published.
+`scripts/install-tools.ps1` downloads pinned CLI/core/tool packages from official
+sources into ignored `vendor/`. It verifies the official CLI ZIP checksum;
+the CLI verifies platform/tool checksums from Arduino's official index.
+Generated local identity inventory must remain ignored.
+There is no public Windows binary environment asset. Earlier offline-bundle
+instructions are superseded by the official-source installation procedure.
+`docs/ARDUINO-CLI-1.5.1-SHA256.txt` and `TOOL-DOWNLOADS.json` record upstream hashes.
 
-On the first preparation build CLI downloaded its missing built-in discovery/
-monitor tools automatically. Those resulting tools are included in the pinned
-archive; offline verification of that completed archive is documented in VALIDATION.
+Internet access is required for installation, not for subsequent compilation
+once the platform and its built-in tools are installed.
 Python 3 is only needed for the optional checksum verifier, not compilation.
 PowerShell 5.1+, a compatible Windows host and basic OS runtime components remain
 host requirements. CH340 driver installation is separate if uploading is needed.

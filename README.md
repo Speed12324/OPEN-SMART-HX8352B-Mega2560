@@ -31,7 +31,7 @@ No physical wiring change was needed. Red, green and blue bars and text were ver
 - CLI **1.5.1**, AVR Core **1.8.8**, GCC **7.3.0** (Arduino toolchain **7.3.0-atmel3.6.1-arduino7**).
 - FQBN `arduino:avr:mega`; tested Windows port `COM3`.
 - `firmware/color_test.hex` is the actual uploaded, working application firmware.
-- Release assets preserve the environment; see [REPRODUCE](docs/REPRODUCE.md) for extraction/verification.
+- Install exact tool versions from official sources with `scripts/install-tools.ps1`; see [REPRODUCE](docs/REPRODUCE.md).
 - `python scripts/verify.py` verifies committed file hashes.
 - `powershell -ExecutionPolicy Bypass -File scripts/build.ps1` builds in isolation; it **does not upload**.
 - Upload is a separate explicit opt-in: `scripts/upload.ps1 -Port COM3 -ConfirmUpload`.
@@ -51,3 +51,4 @@ See [hardware test photograph](evidence/README.md), [environment](docs/ENVIRONME
 For automated diagnostics, see [AGENTS.md](AGENTS.md).
 
 Third-party code retains its original licenses. See [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).
+Public-distribution scope and scanner limitations: [security review](docs/SECURITY-REVIEW.md).

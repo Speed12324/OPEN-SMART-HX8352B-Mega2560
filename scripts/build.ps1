@@ -1,8 +1,11 @@
 param([string]$Cli = "", [switch]$VerboseBuild)
 $ErrorActionPreference = "Stop"
 $root = Split-Path $PSScriptRoot -Parent
-if (!$Cli) { $Cli = Join-Path $root "vendor/arduino-cli.exe" }
-if (!(Test-Path $Cli)) { throw "Extract the pinned Windows environment release asset into the repository first." }
+if (!$Cli) {
+    $Cli = Join-Path $root "vendor/cli-1.5.1/arduino-cli.exe"
+    if (!(Test-Path $Cli)) { $Cli = Join-Path $root "vendor/arduino-cli.exe" }
+}
+if (!(Test-Path $Cli)) { throw "Run scripts/install-tools.ps1 to install pinned tools from official sources." }
 $data = Join-Path $root "vendor/arduino-data"
 $state = Join-Path $root ".state"
 $build = Join-Path $root ".build"
