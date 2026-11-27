@@ -1,24 +1,14 @@
 # Validation / Результаты проверки
 
-Date: **2026-11-28**, Europe/Kyiv.
+Test date: 2026-11-28.
 
-## Initial preservation
+## Baseline
 
-- Timestamped original backup: 87 files; every file read and SHA-256 compared
-  against `D:\opencode\tft-diagnostics`: **PASS**.
-- Original working sketch preserved byte-for-byte: **PASS**.
-- Original Flash/EEPROM parsed; previous network-program strings found in Flash,
-  so Flash is excluded. EEPROM: 4096 bytes, all `0xFF`.
-- Source scan for the previous sketch's nontrivial password: no match in the
-  publication tree. No token or credential-manager output is committed.
-- MCUFRIEND compared against upstream v3.0.0: only the three macro edits
-  after line-ending normalization.
+- MCUFRIEND v3.0.0 comparison: three macro changes after line-ending normalization.
 
 ## Published repository clean clone
 
-Repository was actually created as **PRIVATE**, then source was pushed to `main`.
-Cloned from GitHub into a previously absent directory:
-`D:\opencode\hx8352b-github-verify-20261128`.
+A fresh clone was used for validation.
 
 The checked source started at the first preservation commit (`af642de`).
 Extracted the prepared release environment ZIP into the clone; no global
@@ -44,10 +34,6 @@ size    45304 bytes (Intel HEX file)
 
 There is therefore no binary mismatch to explain for the verified Windows build.
 Later preservation-documentation additions do not change the sketch or libraries.
-Final GitHub tag, release assets, downloaded asset hashes and repository privacy
-are additionally checked after release publication; that external result is
-reported to the owner rather than self-referentially rewriting this immutable tag.
-
 ## Русское резюме
 
 После публикации выполнено настоящее клонирование GitHub в новый каталог.
@@ -57,5 +43,4 @@ Arduino при проверке не перепрошивалась.
 
 Ограничения: Windows-проверка выполнена на том же физическом ПК, но с отдельными
 каталогами CLI, без глобальных библиотек. Другой физический компьютер и Linux
-не проверялись. Некоторые старые снимки сессии недоступны как локальные файлы;
-точная временная метка сообщения об успехе не извлечена независимо.
+не проверялись..

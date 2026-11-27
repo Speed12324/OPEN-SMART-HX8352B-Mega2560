@@ -1,8 +1,6 @@
 # OPEN-SMART HX8352B + Arduino Mega 2560
 
-**Hardware-verified working solution, preserved 28 November 2026 (Europe/Kyiv).**
-The owner reports attempts to revive this display since 2022.
-This repository preserves the successful experiment, not a redesigned driver.
+Fix for a white screen on the OPEN-SMART HX8352B TFT LCD Shield (240 × 400, 8-bit parallel) connected to Arduino Mega 2560 using MCUFRIEND_kbv 3.0.0-Release.
 
 [Русская документация](README.ru.md) · [Reproduce](docs/REPRODUCE.md) · [Pinout](docs/PINOUT.md) · [Diagnostics](docs/DIAGNOSTICS.md)
 
@@ -26,9 +24,9 @@ OPEN-SMART uses a different bus pinout from standard TFT shields.
 An illuminated backlight does not prove successful controller initialization.
 No physical wiring change was needed. Red, green and blue bars and text were verified through the PC webcam.
 
-## Preserve / restore
+## Build and upload
 
-- Original, unrefactored sketch and complete configured library are committed.
+- Test sketch and configured library are included.
 - Adafruit GFX **1.12.6** and BusIO **1.17.4** are vendored, not fetched as “latest”.
 - CLI **1.5.1**, AVR Core **1.8.8**, GCC **7.3.0** (Arduino toolchain **7.3.0-atmel3.6.1-arduino7**).
 - FQBN `arduino:avr:mega`; tested Windows port `COM3`.
@@ -48,9 +46,8 @@ Firmware SHA-256:
 Portrait `setRotation(0)` is the verified setting (the display is physically sideways in the photo).
 Touch, SD, temperature sensing, other orientations and other boards were not tested.
 Linux script is provided but not validated on a Linux host.
-Old Flash is retained locally, excluded from GitHub because it contains previous network-program data.
-The original EEPROM is erased (`0xFF`) and safe to archive.
-Some original session photographs are not available as local files; no missing image is fabricated.
-See [evidence provenance](evidence/README.md), [environment](docs/ENVIRONMENT.md), and [sources](docs/REFERENCES.md).
+See [hardware test photograph](evidence/README.md), [environment](docs/ENVIRONMENT.md), and [sources](docs/REFERENCES.md).
+
+For automated diagnostics, see [AGENTS.md](AGENTS.md).
 
 Third-party code retains its original licenses. See [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).

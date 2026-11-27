@@ -1,7 +1,6 @@
 # Third-party notices / Сторонние компоненты
 
-This is a private preservation archive of an owner's working environment.
-It does not relicense any third-party code or confer rights to republish tools.
+Third-party components retain their original licenses.
 Retain all included notices and consult each component's terms before redistribution.
 
 | Component | Source | Notices |
@@ -17,9 +16,7 @@ Retain all included notices and consult each component's terms before redistribu
 | CLI built-in discovery/monitor tools | Arduino | Original LICENSE.txt files retained alongside binaries; source github.com/arduino/{serial-discovery,mdns-discovery,dfu-discovery,serial-monitor} |
 
 The source libraries and original library-manager ZIPs are archived with notices.
-The Windows binary environment is a **private personal backup**, not a public
-binary distribution or claim that a full corresponding compiler source bundle
-has been assembled here. For public redistribution, obtain and supply complete
+The Windows binary environment is an archival build bundle. A full corresponding compiler source bundle has not been assembled. For public redistribution, obtain and supply complete
 corresponding source and comply with all applicable licenses, including tool
 dependencies; linked build recipes alone do not constitute that source.
 
@@ -28,5 +25,4 @@ into this repository. Hardware documentation, forums and manufacturer/mirror
 pages are bibliographically linked unless local redistribution rights were clear.
 No claim of an authoritative OPEN-SMART manufacturer-hosted manual is made.
 
-Authored preservation documentation and scripts may be used to reproduce this
-owner's archived solution. No blanket project license overrides third-party terms.
+No blanket project license overrides third-party terms.

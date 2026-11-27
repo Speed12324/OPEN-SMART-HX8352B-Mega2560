@@ -2,7 +2,7 @@
 
 ## Windows: preserved environment (recommended)
 
-1. Authenticate to GitHub as an account allowed to read this **private** repository.
+1. Ensure Git is installed.
 2. Clone branch `main`, or checkout immutable tag `v1.0.0`:
    ```powershell
    git clone https://github.com/Speed12324/OPEN-SMART-HX8352B-Mega2560.git
@@ -79,4 +79,4 @@ verified Windows clean build.
 Committed source, source ZIPs, libraries, firmware, license notices and manifests
 plus the Windows environment release asset are needed for long-term recovery.
 Keep an independent local copy of release assets: Git clone alone does not copy them.
-Private GitHub access and compatible hardware/OS remain required.
+Compatible hardware and OS remain required.

@@ -1,0 +1,12 @@
+# OPEN-SMART HX8352B + Arduino Mega 2560
+
+> Hardware-tested solution for a white-screen OPEN-SMART HX8352B 240x400 parallel TFT shield on Arduino Mega 2560. MCUFRIEND_kbv 3.0.0 requires USE_SPECIAL, USE_OPENSMART_SHIELD_PINOUT_MEGA, SUPPORT_8352B and tft.begin(0x0065), not 0x8352.
+
+## Technical reference
+- [Diagnostic reference](AGENTS.md)
+- [Pinout](docs/PINOUT.md)
+- [Test sketch](color_test/color_test.ino)
+- [Library patch](patches/mcufriend-opensmart-mega.patch)
+- [Sources](docs/REFERENCES.md)
+- [Build instructions](docs/REPRODUCE.md)
+- [Test results](docs/VALIDATION.md)

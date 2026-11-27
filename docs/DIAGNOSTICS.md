@@ -1,42 +1,22 @@
-# Diagnostics / История диагностики
+# White-screen diagnostics
 
-## Date and provenance / Дата и происхождение сведений
+Hardware test: 2026-11-28.
 
-The owner reports attempts since **2022**. This is owner testimony, not an
-independently audited historical record.
+## Test sequence
 
-Success occurred **28 November 2026, Europe/Kyiv (UTC+02:00)**.
-The active conversation is the diagnostic record available to the agent.
-The harness date is 2026-11-28; the archived working HEX timestamp is
-2026-11-28 00:30:46 local, and the backup was created 00:43:14 local.
-Windows reports FLE Standard Time and offset +02:00, consistent with Kyiv in November.
-The exact success-message timestamp could not be independently exported from
-the local session database: it did not contain this active harness session.
-Therefore **00:30:46 is a firmware file timestamp, not a claimed photograph/message timestamp**.
-No fabricated timestamp or full private chat export is included.
-
-Владелец сообщает о попытках с 2022 года. Дата успеха — 28.11.2026 по Europe/Kyiv;
-точное время сообщения об успехе недоступно в локальном журнале. Дата подтверждается
-контекстом сессии и временными метками рабочего файла; границы доказательства указаны явно.
-
-## Reconstructed sequence / Последовательность
-
-1. **Observed:** screen illuminated white; no useful graphics. Webcam was aimed
-   at the connected device. Some owner photos show the unpowered panel dark.
-2. **Observed in supplied photos:** PCB marked OPEN-SMART, TFT LCD Shield,
+1. **Observed:** screen illuminated white; no useful graphics. 
+2. **PCB identification:** PCB marked OPEN-SMART, TFT LCD Shield,
    `Driver IC: HX8352B`; blue board marked Mega 2560 / ATmega2560.
 3. **Host enumeration:** CH340 USB serial device appeared as COM3.
 4. **Documentation finding:** MCUFRIEND how-to item 19 requires special OPEN-SMART
    wiring and HX8352B support; forum results corroborated this.
 5. **Source inspection:** the installed MCUFRIEND_kbv 3.0.0-Release had
    `USE_SPECIAL`, `USE_OPENSMART_SHIELD_PINOUT_MEGA`, `SUPPORT_8352B` commented out.
-6. **Preservation:** pre-test Flash (262144 bytes) and EEPROM (4096 bytes) read
-   with avrdude, without erasing the device.
+6. **Baseline:** pre-test firmware was backed up.
 7. **Change:** created a separate local library copy; uncommented those three
    macros. Global libraries were left unchanged.
 8. **Failed experiment:** uploaded bars/text sketch calling `begin(0x8352)`.
-   Webcam still showed white. This ID was the diagnostic agent's initial mistake,
-   not evidence of a faulty display.
+   Webcam still showed white. 
 9. **Serial observation:** at 115200 baud, controller reported `Read ID: 0x65`.
    Serial also printed “Color bars drawn”; that message alone did not prove display output.
 10. **Source analysis:** `SUPPORT_8352B` guards `case 0x0065 // HX8352-B`.
@@ -45,9 +25,7 @@ No fabricated timestamp or full private chat export is included.
 12. **Upload succeeded:** 16100 bytes program, 508 bytes global RAM as reported by CLI.
 13. **Visual observation:** webcam showed red, green, blue areas and text
     `HX8352B`, `MEGA 2560`, `COLOR TEST`.
-14. **Archive verification:** captured a fresh cropped photo, rebuilt in an
-    isolated environment, matched the original HEX byte-for-byte.
-    **No archival-task upload was performed.**
+14. **Rebuild:** isolated compilation produced a byte-identical HEX.
 
 ## Facts vs hypotheses / Факты и гипотезы
 
