@@ -1,0 +1,6 @@
+.build/
+.state/
+*.log
+vendor/
+backups/original-flash*
+__pycache__/

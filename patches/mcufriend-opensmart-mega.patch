@@ -1,0 +1,30 @@
+--- a/MCUFRIEND_kbv.cpp
++++ b/MCUFRIEND_kbv.cpp
+@@ -13,7 +13,7 @@
+ //#define SUPPORT_8347D             //HX8347-D, HX8347-G, HX8347-I, HX8367-A +520 bytes, 0.27s
+ //#define SUPPORT_8347A             //HX8347-A +500 bytes, 0.27s
+ //#define SUPPORT_8352A             //HX8352A +486 bytes, 0.27s
+-//#define SUPPORT_8352B             //HX8352B
++#define SUPPORT_8352B             //HX8352B
+ //#define SUPPORT_8357D_GAMMA       //monster 34 byte 
+ //#define SUPPORT_9163              //
+ //#define SUPPORT_9225              //ILI9225-B, ILI9225-G ID=0x9225, ID=0x9226, ID=0x6813 +380 bytes
+--- a/utility/mcufriend_shield.h
++++ b/utility/mcufriend_shield.h
+@@ -1,4 +1,4 @@
+-//#define USE_SPECIAL             //check for custom drivers
++#define USE_SPECIAL             //check for custom drivers
+ 
+ #define WR_ACTIVE2  {WR_ACTIVE; WR_ACTIVE;}
+ #define WR_ACTIVE4  {WR_ACTIVE2; WR_ACTIVE2;}
+--- a/utility/mcufriend_special.h
++++ b/utility/mcufriend_special.h
+@@ -11,7 +11,7 @@
+ //#define USE_DUE_16BIT_SHIELD        //RD on PA15 (D24) 
+ //#define USE_BOBCACHELOT_TEENSY
+ //#define USE_OPENSMART_SHIELD_PINOUT_UNO
+-//#define USE_OPENSMART_SHIELD_PINOUT_MEGA
++#define USE_OPENSMART_SHIELD_PINOUT_MEGA
+ //#define USE_OPENSMART_SHIELD_PINOUT_DUE //thanks Michel53
+ //#define USE_ELECHOUSE_DUE_16BIT_SHIELD    //Untested yet
+ //#define USE_MY_BLUEPILL
